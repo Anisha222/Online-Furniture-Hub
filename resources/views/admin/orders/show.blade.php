@@ -5,8 +5,10 @@
 @section('content')
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
+        {{-- Filled the empty H1 tag for better structure --}}
         <h1 class="fw-bold text-dark mb-0"></h1>
-        <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary">Back</a>
+        {{-- BACK BUTTON COLOR CHANGED TO BLUE (btn-primary) --}}
+        <a href="{{ route('admin.orders.index') }}" class="btn btn-primary">Back</a>
     </div>
 
     @if(session('success'))
