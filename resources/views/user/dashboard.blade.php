@@ -1,4 +1,4 @@
-@extends('layouts.user') {{-- Ensure this extends your correct user layout --}}
+<!-- @extends('layouts.user') {{-- Ensure this extends your correct user layout --}}
 
 @section('title', 'User Dashboard')
 
@@ -128,4 +128,4 @@
         background-color: #f8f9fa;
     }
 </style>
-@endpush
+@endpush -->

@@ -3,7 +3,7 @@
 @section('content')
 <div class="min-h-screen bg-gray-100 flex">
     <!-- Sidebar (Keep your existing sidebar code here) -->
-    <aside class="w-64 bg-black text-white h-screen fixed left-0 top-0 overflow-y-auto">
+    <aside class="w-64 bg-black text-white h-screen fixed left-0 top-0 overflow-y-auto z-10">
         <div class="p-4">
             <h1 class="text-xl font-bold mb-6">Furniture Shopping</h1>
             <nav class="space-y-2">
@@ -26,8 +26,11 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-1 ml-64 p-6 bg-gray-100">
-        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md text-center">
+    {{-- Main content area takes up remaining space and centers its content --}}
+    <main class="flex-1 ml-64 flex items-center justify-center p-6 bg-gray-100"> 
+        
+        {{-- **KEY CHANGE**: Added 'ml-8' to shift the card two steps (32px) to the right. --}}
+        <div class="max-w-lg w-full mx-auto bg-white p-8 rounded-lg shadow-2xl text-center ml-8"> 
             @if(session('success'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
                     <span class="block sm:inline">{{ session('success') }}</span>

@@ -1,13 +1,14 @@
 {{-- resources/views/layouts/user_sidebar.blade.php --}}
 
 <div class="h-100 d-flex flex-column">
-    <!-- Sidebar Header -->
-    <div class="sidebar-heading">
-        User Panel
+    <!-- Sidebar Header - MODIFIED -->
+    <div class="sidebar-heading d-flex align-items-center">
+        <i class="fas fa-couch me-2"></i> User Panel
     </div>
 
     <!-- Sidebar Menu -->
-    <nav class="flex-grow-1 overflow-y-auto">
+    {{-- REMOVED: overflow-y-auto class from the line below --}}
+    <nav class="flex-grow-1 overflow-y-auto"> {{-- Added overflow-y-auto back in case the list gets too long and needs to scroll --}}
         <ul class="list-group list-group-flush">
             {{-- Dashboard / Home --}}
             <li class="list-group-item {{ request()->routeIs('user.dashboard') ? 'active' : '' }}">
@@ -62,6 +63,15 @@
 </div>
 
 <style>
+    /* ADDED STYLE FOR SIDEBAR HEADING */
+    #sidebar-wrapper .sidebar-heading {
+        padding: 15px;
+        font-size: 1.25rem;
+        color: #ffffff; /* Ensure the text and icon are white */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 0;
+    }
+    
     /* Specific styles for sidebar items to match screenshot and improve UX */
     #sidebar-wrapper .list-group-item {
         background-color: transparent; /* Ensure default is transparent */
@@ -96,16 +106,6 @@
         text-align: left; /* Align text to the left */
         padding: 0; /* Remove default button padding */
     }
-    /* The general .list-group-item.active rule will handle the active state background */
-    /* Remove or comment out the following block as it's no longer needed:
-    #sidebar-wrapper .list-group-item.text-danger.active {
-        background-color: #dc3545 !important;
-        box-shadow: inset 3px 0 0 #c82333;
-    }
-    #sidebar-wrapper .list-group-item.text-danger.active .btn-link {
-        color: #ffffff !important;
-    }
-    */
 
     /* Override the default Bootstrap button focus/hover for cleaner look */
     .list-group-item-action:focus, .list-group-item-action:hover {
